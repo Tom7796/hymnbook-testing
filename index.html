@@ -4,110 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiji Methodist Hymn Book - App Testing</title>
+    <!-- Import a professional font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #0056b3; /* Professional deep blue */
+            --bg-gradient: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); /* Modern soft gradient */
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 600px;
-            margin: 0 auto;
+            margin: 0;
             padding: 20px;
-            background-color: #f9f9f9;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .container {
             background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+        }
+        /* App Icon Styling */
+        .app-icon {
+            width: 110px;
+            height: 110px;
+            border-radius: 22.5%; /* Classic app icon rounded corners */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
         h1 {
-            color: #2c3e50;
-            text-align: center;
+            color: #1a1a1a;
+            margin-top: 0;
             margin-bottom: 5px;
+            font-size: 1.8em;
         }
         .subtitle {
-            text-align: center;
-            color: #7f8c8d;
+            color: #666;
             margin-bottom: 30px;
-            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+        }
+        .intro {
+            margin-bottom: 30px;
+            color: #555;
+            font-size: 1.05em;
         }
         .step {
-            margin-bottom: 25px;
-            padding: 15px;
-            border-left: 4px solid #3498db;
-            background-color: #f1f8ff;
-            border-radius: 0 5px 5px 0;
+            background: #fff;
+            border: 2px solid #edf2f7;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .step:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: #cbd5e0;
         }
         .step h3 {
             margin-top: 0;
-            color: #2980b9;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
         }
         .btn {
             display: block;
             width: 100%;
             text-align: center;
-            background-color: #3498db;
+            background-color: var(--primary);
             color: white;
-            padding: 12px 0;
+            padding: 14px 0;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 15px;
             box-sizing: border-box;
+            transition: background-color 0.2s, transform 0.1s;
         }
         .btn:hover {
-            background-color: #2980b9;
+            background-color: #004494;
+        }
+        .btn:active {
+            transform: scale(0.98);
         }
         .note {
-            font-size: 0.9em;
-            color: #e74c3c;
-            font-weight: bold;
+            font-size: 0.85em;
+            color: #d32f2f;
+            background: #ffebee;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px;
+            border-left: 4px solid #d32f2f;
         }
         .footer {
-            text-align: center;
             margin-top: 30px;
-            font-size: 0.8em;
-            color: #bdc3c7;
+            font-size: 0.85em;
+            color: #999;
         }
         .footer a {
-            color: #95a5a6;
+            color: var(--primary);
             text-decoration: none;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- This looks for an image named icon.png in your GitHub repository -->
+    <img src="icon.png" alt="App Icon" class="app-icon" onerror="this.style.display='none'">
+    
     <h1>Fiji Methodist Hymn Book</h1>
     <div class="subtitle">Early Access Beta Testing</div>
 
-    <p>Bula! Thank you for helping test the new Fiji Methodist Hymn Book app. Because the app is in "Closed Testing," you must follow these exact steps to download it.</p>
+    <p class="intro">Bula! Thank you for helping test the new app. To get access, please complete the steps below in order.</p>
 
     <div class="step">
-        <h3>Step 1: Register as a Tester</h3>
-        <p>Google requires us to whitelist your email address before you can download the app.</p>
-        <!-- Use either a Google Form link to collect emails, or a Google Group link if you set one up in Play Console -->
-        <a href="https://groups.google.com/g/app-tk">Join Google Group</a>
+        <h3>👥 Step 1: Join the Test Group</h3>
+        <p>Google requires us to whitelist your account. Join our official Google Group to get instant access.</p>
+        <a href="https://groups.google.com/g/app-tk" class="btn" target="_blank">Join Google Group</a>
     </div>
 
     <div class="step">
-        <h3>Step 2: Opt-in to the Test</h3>
-        <p>Once you have registered (and we have added you), click the button below to accept the Google Play testing invitation.</p>
-        <!-- This is the "Join on Web" or "Join on Android" link found in your Play Console Closed Testing track -->
+        <h3>✅ Step 2: Opt-in to the Test</h3>
+        <p>Once you have joined the group, click below to accept the official Google Play testing invitation.</p>
         <a href="https://play.google.com/apps/testing/fijianhymnbook.myapp" class="btn" target="_blank">Accept Testing Invite</a>
     </div>
 
     <div class="step">
-        <h3>Step 3: Download & Keep the App</h3>
-        <p>After accepting the invite, you will be directed to the Google Play Store to download the app.</p>
-        <p class="note">⚠️ IMPORTANT: Please open the app and keep it installed on your phone for at least 14 days so Google can verify our test!</p>
+        <h3>📱 Step 3: Download the App</h3>
+        <p>After accepting the invite, download the app from the Google Play Store.</p>
+        <div class="note">⚠️ IMPORTANT: You must open the app and keep it installed on your phone for 14 days so Google can verify our test!</div>
     </div>
 
     <div class="footer">
-        <p>© 2026 Fiji Methodist Hymn Book. All rights reserved.</p>
-        <!-- You can also host your Privacy Policy on GitHub and link it here later -->
+        <p>© 2026 Fiji Methodist Hymn Book</p>
         <p><a href="privacy.html">Privacy Policy</a></p>
     </div>
 </div>
